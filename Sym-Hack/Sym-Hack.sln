@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sym-Hack", "Sym-Hack\Sym-Hack.csproj", "{A2D1C380-7D20-497D-B5D5-EE2726C95A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sym-Hack.Tests", "Sym-Hack.Tests\Sym-Hack.Tests.csproj", "{A59057B0-919C-4459-A769-723FEE043EBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2D1C380-7D20-497D-B5D5-EE2726C95A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D1C380-7D20-497D-B5D5-EE2726C95A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D1C380-7D20-497D-B5D5-EE2726C95A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D1C380-7D20-497D-B5D5-EE2726C95A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59057B0-919C-4459-A769-723FEE043EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59057B0-919C-4459-A769-723FEE043EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59057B0-919C-4459-A769-723FEE043EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59057B0-919C-4459-A769-723FEE043EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77656671-3297-4327-96B7-6AA3564DE628}
+	EndGlobalSection
+EndGlobal
