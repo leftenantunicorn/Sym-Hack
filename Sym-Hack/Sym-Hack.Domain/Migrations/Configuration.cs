@@ -10,6 +10,7 @@ namespace Sym_Hack.Domain.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(Sym_Hack.Domain.SymHackContext context)
