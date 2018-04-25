@@ -12,9 +12,9 @@ namespace Sym_Hack.Domain
 {
     // Code-Based Configuration and Dependency resolution  
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    class SymHackContext : IdentityDbContext<SymHackUser>
+    public class SymHackContext : IdentityDbContext<SymHackUser>
     {   
-        public SymHackContext(): base("sym-hack", throwIfV1Schema: false) { }
+        public SymHackContext(): base("symhackcontext", throwIfV1Schema: false) { }
 
         public static SymHackContext Create()
         {
