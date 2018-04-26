@@ -73,6 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\IdentityModels.cs" />
+    <Compile Include="Migrations\201804261411150_Initial.cs" />
+    <Compile Include="Migrations\201804261411150_Initial.Designer.cs">
+      <DependentUpon>201804261411150_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
     <Compile Include="MySqlHistoryContext.cs" />
@@ -84,6 +88,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804261411150_Initial.resx">
+      <DependentUpon>201804261411150_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
