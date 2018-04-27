@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
@@ -66,5 +67,59 @@ namespace Sym_Hack
             //    ClientSecret = ""
             //});
         }
+
+        public void CreateRolesandUsers()
+        {
+            var context = SymHackContext.Create();
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userManager = new UserManager<SymHackUser>(new UserStore<SymHackUser>(context));
+
+
+            // In Startup iam creating first Admin Role and creating a default Admin User    
+            if (!roleManager.RoleExists("GameAdmin"))
+            {
+
+                // first we create Admin rool   
+                var role = new IdentityRole();
+                role.Name = "GameAdmin";
+                roleManager.Create(role);
+
+                //Here we create a Admin super user who will maintain the website                  
+
+                var user = new SymHackUser();
+                user.UserName = "erin";
+                user.Email = "erin.bradley@mohawkcollege.ca";
+
+                string userPWD = "Mohawk1234!";
+
+                var chkUser = userManager.Create(user, userPWD);
+
+                //Add default User to Role Admin   
+                if (chkUser.Succeeded)
+                {
+                    var result1 = userManager.AddToRole(user.Id, "GameAdmin");
+                }
+            }
+
+            // creating Creating Manager role    
+            if (!roleManager.RoleExists("SiteAdmin"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "SiteAdmin";
+                roleManager.Create(role);
+
+            }
+
+            // creating Creating Employee role    
+            if (!roleManager.RoleExists("User"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "User";
+                roleManager.Create(role);
+
+            }
+        }
+
     }
 }

@@ -78,8 +78,6 @@
       <DependentUpon>201804261411150_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MySqlConfiguration.cs" />
-    <Compile Include="MySqlHistoryContext.cs" />
     <Compile Include="SymHackContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

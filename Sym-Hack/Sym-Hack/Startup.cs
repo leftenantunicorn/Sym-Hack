@@ -12,6 +12,7 @@ namespace Sym_Hack
         {
             DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
             ConfigureAuth(app);
+            CreateRolesandUsers();
         }
     }
 }
