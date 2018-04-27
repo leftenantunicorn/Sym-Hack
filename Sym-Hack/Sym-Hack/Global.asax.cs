@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,12 @@ namespace Sym_Hack
 
             if (bool.Parse(ConfigurationManager.AppSettings["MigrateDatabaseToLatestVersion"]))
             {
-                var configuration = new Sym_Hack.Domain.Migrations.Configuration();
+                var configuration = new Sym_Hack.Domain.Migrations.Configuration
+                {
+                    TargetDatabase = new DbConnectionInfo(
+                    "server=127.0.0.1;userid=azure;password=6#vWHD_$;database=localdb;Port=53025;",
+                    "MySql.Data.MySqlClient")
+                };
                 var migrator = new DbMigrator(configuration);
                 migrator.Update();
             }
